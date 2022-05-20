@@ -1,0 +1,49 @@
+.layout {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header_nav {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100px;
+    background-image: url(~@/assets/top_bg.png);
+    background-size: 80% 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    .center_li {
+        height: 80px;
+        line-height: 80px;
+        border: 0;
+        background-color: initial;
+        font-size: 34px;
+        font-weight: 500;
+    }
+    .ab_box {
+        line-height: 90px;
+        color: #62E6FF;
+        font-weight: Bold;
+        font-size: 24px;
+        position: absolute;
+        right: 40px;
+        top: 0;
+        z-index: 999;
+    }
+}
+
+.container {
+    padding: 0 20px;
+}
+
+.goBack {
+    width: 66px;
+    height: 66px;
+    // background-image: url(~@/assets/school_logo.png);
+    background-size: cover;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 999;
+}

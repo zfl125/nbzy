@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login_container">
+            <div class="login_header">
+                <img src="./images/logo.png" alt="">
+                <span class="logo_name">智慧社区云平台</span>
+            </div>
+            <div class="login_from">
+                <div class="login_form_item">
+                    <img src="./images/user.png" alt="">
+                    <input id="username" type="text" placeholder="请输入账户名">
+                </div>
+                <div class="login_form_item">
+                    <img src="./images/password.png" alt="">
+                    <input id="password" type="password" placeholder="请输入密码">
+                </div>
+                <div class="login_form_item_v">
+                    <input id="imgCode" type="text" placeholder="请输入验证码">
+                    <img src="/userLogin/ValCode?t=0" id="ValCode" alt="">
+                </div>
+                <div class="login_form_item_v">
+                    <button id="submit" class="login_submit">登录</button>
+                </div>
+                <div class="login_footer">
+                    <div class="login_a">
+                        <a href="#">
+                            <img src="./images/qq.png" alt="">
+                            商务咨询
+                        </a>
+                        <a href="#">
+                            <img src="./images/qq.png" alt="">
+                            商务咨询
+                        </a>
+                    </div>
+                    <p>
+                        ©森普软件 400-677-0389
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/md5.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        $('#ValCode').click(function () {
+            var time = new Date()
+            $(this).attr('src', '/userLogin/ValCode?t=' + time.getTime())
+        });
+        $('#submit').click(function () {
+            var password = hex_md5($('#password').val())
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: '/doLogin/login',
+                data: {
+                    usertype: 2,
+                    logintype: 0,
+                    username: $('#username').val(),
+                    password: password,
+                    code: $('#imgCode').val(),
+                    isapi: 1
+                },
+                success: function (res) {
+                    // if (res.state == 1) {
+                    //     localStorage.setItem('authc', res.token)
+                    //     localStorage.setItem('user', res.data)
+                    //     window.location.href = "/"
+                    // }
+                    // window.location.href = "/"
+                },
+                complete: function (){
+                    localStorage.setItem('authc', 'ddd')
+                    window.location.href = "/"
+                }
+                
+            })
+        })
+    </script>
+</body>
+
+</html>

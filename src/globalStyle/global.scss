@@ -1,0 +1,222 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.centerImg {
+    height: 61.1vh;
+}
+
+a {
+    color: #62e6ff;
+    text-decoration: none;
+}
+
+@import "./color.scss";
+@import "./important.scss";
+.center_ {
+    position: relative;
+    height: 100%;
+}
+
+.bar {
+    height: 100%;
+    position: relative;
+}
+
+.name_size {
+    height: 30px;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 30px;
+    display: flex;
+    color: rgb(0, 255, 246);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    span {
+        display: block;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .units {
+        font-size: 12px;
+        font-weight: 500;
+        margin-right: 50px;
+        color: rgba($color: #fff, $alpha: 0.5);
+        margin-left: 10px;
+    }
+}
+
+.echart {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+@keyframes updow {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes minupdow {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.jiange_10 {
+    height: 90%;
+    margin-top: 5%;
+    padding-left: 3%;
+}
+
+.scroll::-webkit-scrollbar {
+    background: rgba(255, 255, 255, 0.2);
+    height: 16px;
+    width: 6px;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+.scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.infoTitle {
+    height: 55px;
+    line-height: 55px;
+    padding-left: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: rgba(0, 255, 246, 1);
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.box_flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    .left_box {
+        width: 50%;
+    }
+    .right_box {
+        width: 50%;
+    }
+}
+
+.pelInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    .pelInfo_img {
+        float: left;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 25%;
+        object-fit: contain;
+        height: 100px;
+    }
+    .pelInfo_text {
+        overflow: hidden;
+        flex: 1;
+    }
+}
+
+.spb-involve-title {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.lunbo {
+    padding: 10px 10px;
+    flex: 1;
+    height: 180px;
+    background: rgba(3, 25, 108, 0.3);
+    border: 1px solid rgba(4, 206, 244, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.eventInfo_content {
+    padding: 0 20px;
+    .eventInfo_content_p {
+        color: rgba(0, 255, 246, 1);
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+.iamge_map {
+    width: 50%;
+    height: 200px;
+}
+
+.el-icon-close {
+    font-size: 28px !important;
+    color: #fff;
+    font-weight: 700;
+}
+
+.el-dialog {
+    border: 0;
+}
+
+.el-carousel__arrow {
+    background-color: rgba($color: #fff, $alpha: 0.5) !important;
+}
+
+// 自定义
+.overflow_h_1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}

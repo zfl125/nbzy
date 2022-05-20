@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <script src="./dataTemplate/index.js"></script>
+    <script src="./js/rem.js"></script>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <style>
+        #app_bg {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            transition: all 1.5s;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+    <script>
+        try {
+            document.getElementById('app_bg').style.opacity = '1';
+        } catch (error) {}
+    </script>
+    <div id="app_bg"></div>
+    <script>
+        setTimeout(() => {
+            try {
+                document.getElementById('app_bg').style.opacity = '0';
+                document.getElementById('app_bg').style.zIndex = '-1';
+            } catch (error) {}
+        }, 1000);
+    </script>
+    <div id="app"></div>
+</body>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=2ba3b43bb668726a7f8d831c6fc7ae90">
+</script>
+
+</html>
