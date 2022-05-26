@@ -203,26 +203,26 @@ export default {
       //setOption方法
       myChart.setOption(option);
 
-      var index = 0; //播放所在下标
-      function autoPlay() {
-        myChart.dispatchAction({
-          type: "showTip",
-          seriesIndex: 0,
-          dataIndex: index,
-        });
-        index++;
-        var dataLength =dataSource.annual_plan.length;
-        if (index > dataLength) {
-          index = 0;
-        }
-      }
-      var times = setInterval(autoPlay, 2000);
-      myChart.on("mouseover", function () {
-        clearInterval(times);
-      });
-      myChart.on("mouseout", function () {
-        times = setInterval(autoPlay, 2000);
-      });
+      // var index = 0; //播放所在下标
+      // function autoPlay() {
+      //   myChart.dispatchAction({
+      //     type: "showTip",
+      //     seriesIndex: 0,
+      //     dataIndex: index,
+      //   });
+      //   index++;
+      //   var dataLength =dataSource.annual_plan.length;
+      //   if (index > dataLength) {
+      //     index = 0;
+      //   }
+      // }
+      // var times = setInterval(autoPlay, 2000);
+      // myChart.on("mouseover", function () {
+      //   clearInterval(times);
+      // });
+      // myChart.on("mouseout", function () {
+      //   times = setInterval(autoPlay, 2000);
+      // });
       myChart.resize();
       window.addEventListener("resize", function () {
         myChart.resize();

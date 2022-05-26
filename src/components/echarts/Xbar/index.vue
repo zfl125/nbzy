@@ -149,26 +149,26 @@ export default {
         ],
       };
       myChart.setOption(option, true);
-      var index = 0; //播放所在下标
-      function autoPlay() {
-        myChart.dispatchAction({
-          type: "showTip",
-          seriesIndex: 0,
-          dataIndex: index,
-        });
-        index++;
-        var dataLength = option.series[0].data.length;
-        if (index > dataLength) {
-          index = 0;
-        }
-      }
-      var times = setInterval(autoPlay, 2000);
-      myChart.on("mouseover", function () {
-        clearInterval(times);
-      });
-      myChart.on("mouseout", function () {
-        times = setInterval(autoPlay, 2000);
-      });
+      // var index = 0; //播放所在下标
+      // function autoPlay() {
+      //   myChart.dispatchAction({
+      //     type: "showTip",
+      //     seriesIndex: 0,
+      //     dataIndex: index,
+      //   });
+      //   index++;
+      //   var dataLength = option.series[0].data.length;
+      //   if (index > dataLength) {
+      //     index = 0;
+      //   }
+      // }
+      // var times = setInterval(autoPlay, 2000);
+      // myChart.on("mouseover", function () {
+      //   clearInterval(times);
+      // });
+      // myChart.on("mouseout", function () {
+      //   times = setInterval(autoPlay, 2000);
+      // });
 
       myChart.resize();
       window.addEventListener("resize", function () {

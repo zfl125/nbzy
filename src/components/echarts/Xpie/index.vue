@@ -136,66 +136,66 @@ export default {
       this.chartAuto(option, myChart);
     },
 
-    chartAuto(option, myChart) {
-      let isSet = true;
-      var charPie3currentIndex = 0;
-      var startCharts = null;
-      myChart.on("mouseover", (param) => {
-        isSet = false;
-        clearInterval(startCharts);
-        // 取消之前高亮的图形
-        myChart.dispatchAction({
-          type: "downplay",
-          seriesIndex: 0,
-          dataIndex: charPie3currentIndex,
-        });
-        // 高亮当前图形
-        myChart.dispatchAction({
-          type: "highlight",
-          seriesIndex: 0,
-          dataIndex: param.dataIndex,
-        });
-        // 显示 tooltip
-        myChart.dispatchAction({
-          type: "showTip",
-          seriesIndex: 0,
-          dataIndex: param.dataIndex,
-        });
-        charPie3currentIndex = param.dataIndex;
-      });
+    // chartAuto(option, myChart) {
+    //   let isSet = true;
+    //   var charPie3currentIndex = 0;
+    //   var startCharts = null;
+    //   myChart.on("mouseover", (param) => {
+    //     isSet = false;
+    //     clearInterval(startCharts);
+    //     // 取消之前高亮的图形
+    //     myChart.dispatchAction({
+    //       type: "downplay",
+    //       seriesIndex: 0,
+    //       dataIndex: charPie3currentIndex,
+    //     });
+    //     // 高亮当前图形
+    //     myChart.dispatchAction({
+    //       type: "highlight",
+    //       seriesIndex: 0,
+    //       dataIndex: param.dataIndex,
+    //     });
+    //     // 显示 tooltip
+    //     myChart.dispatchAction({
+    //       type: "showTip",
+    //       seriesIndex: 0,
+    //       dataIndex: param.dataIndex,
+    //     });
+    //     charPie3currentIndex = param.dataIndex;
+    //   });
 
-      myChart.on("mouseout", function () {
-        if (!isSet) {
-          startCharts = setInterval(chartHover, 2000);
-          isSet = true;
-        }
-      });
+    //   myChart.on("mouseout", function () {
+    //     if (!isSet) {
+    //       startCharts = setInterval(chartHover, 2000);
+    //       isSet = true;
+    //     }
+    //   });
 
-      const chartHover = () => {
-        var dataLen = option.series[0].data.length;
-        // 取消之前高亮的图形
-        myChart.dispatchAction({
-          type: "downplay",
-          seriesIndex: 0,
-          dataIndex: charPie3currentIndex,
-        });
-        charPie3currentIndex = (charPie3currentIndex + 1) % dataLen;
-        // 高亮当前图形
-        myChart.dispatchAction({
-          type: "highlight",
-          seriesIndex: 0,
-          dataIndex: charPie3currentIndex,
-        });
-        // 显示 tooltip
-        myChart.dispatchAction({
-          type: "showTip",
-          seriesIndex: 0,
-          dataIndex: charPie3currentIndex,
-        });
-      };
+    //   const chartHover = () => {
+    //     var dataLen = option.series[0].data.length;
+    //     // 取消之前高亮的图形
+    //     myChart.dispatchAction({
+    //       type: "downplay",
+    //       seriesIndex: 0,
+    //       dataIndex: charPie3currentIndex,
+    //     });
+    //     charPie3currentIndex = (charPie3currentIndex + 1) % dataLen;
+    //     // 高亮当前图形
+    //     myChart.dispatchAction({
+    //       type: "highlight",
+    //       seriesIndex: 0,
+    //       dataIndex: charPie3currentIndex,
+    //     });
+    //     // 显示 tooltip
+    //     myChart.dispatchAction({
+    //       type: "showTip",
+    //       seriesIndex: 0,
+    //       dataIndex: charPie3currentIndex,
+    //     });
+    //   };
 
-      startCharts = setInterval(chartHover, 2000);
-    },
+    //   startCharts = setInterval(chartHover, 2000);
+    // },
     setlegendHeight(length) {
       // 7
       var len = "0%";
